@@ -94,17 +94,17 @@
 
 		$(this).each(function() {
 			this.oncontextmenu = function(e) {
-				//鍥炶皟
+				
 				if ($.isFunction(params.beforeShow)) {
 					params.beforeShow.call(this);
 				}
 				e = e || window.event;
-				//闃绘鍐掓场
+				
 				e.cancelBubble = true;
 				if (e.stopPropagation) {
 					e.stopPropagation();
 				}
-				//闅愯棌褰撳墠涓婁笅鏂囪彍鍗曪紝纭繚椤甸潰涓婁竴娆″彧鏈変竴涓笂涓嬫枃鑿滃崟
+				
 				$.smartMenu.hide();
 				var st = D.scrollTop();
 				var jqueryMenu = funSmartMenu();
@@ -116,7 +116,7 @@
 					});
 					D.data("target", jqueryMenu);
 					D.data("trigger", this);
-					//鍥炶皟
+					
 					if ($.isFunction(params.afterShow)) {
 						params.afterShow.call(this);
 					}
