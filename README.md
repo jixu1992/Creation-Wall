@@ -15,8 +15,8 @@ Users can use gestures to trigger some events.
   
   
 To run the project:
-1. Enter the project repository.
-2. "node app.js"
-3. Open 2 browsers, connect on "http://127.0.0.1:8080".
+  - Enter the project repository.
+  - "node app.js"
+  - Open 2 browsers, connect on "http://127.0.0.1:8080".
 
 
