@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html data-layout="free">
+<html>
+   <head>
+
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css" />
+      <title>Creation Wall</title>
+
+   <body>
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+      <script src="socket.io/socket.io.js"></script>
+      <script src="contextmenus.js"></script>
+      <div id="header"><h1>Creation Wall</h1></div>
+
+
+  <!-- //...........search Form -->
+      <form id="searchForm" onSubmit="submitFn(this, event);" name="yestop">
+        <div class="search-wrapper">
+        <div class="input-holder">
+        <input type="text" class="search-input" placeholder="Enter the key word" name="hewenqi" />
+        <input type="hidden" name="q" />
+        <button class="search-icon" onClick="searchToggle(this, event);"><span></span></button>
+        </div>
+        <span class="close" onClick="searchToggle(this, event);"></span>
+        <div class="result-container">
+
+        </div>
+        </div>
+        </form>
+   <script type="text/javascript" src="search.js"></script>
+  <!-- //...........search Form -->
+  <canvas id="drawing"  height="800" width="1240"  style="border:1px solid #d3d3d3; z-index:1">
+ Your browser does not support the HTML5 canvas tag.</canvas>
+
+     <ul class="contextmenu" id="drawingmenu">
+     <li onclick="createText()">Add text</li>
+     <li onclick="createImage()">Add Image</li>
+     <li>Add Link</li>
+     </ul>
+<!-- //.....butons on the right bottom -->
+     <button id="save" class="bouton17" ></button>
+     <a id="saveJpg" download="myImage.jpg" >Save</a>
+
+     
+     <button onclick="clearCanvas()" id="clear" class="bouton17" >Clear</button>
+
+     <script type="text/javascript" src="client.js"></script>
+     <script src="dollar.js"></script>
+
+     <div id="help" class="tooltip">Help
+     <span class="tooltiptext">"o" for search,  "x" for quit</span>
+     </div>
+
+     <!-- //.............................................a form search -->
+
+<!-- //.................................slide menu -->
+<!-- Right panel -->
+  <!-- <div id="right-panel" class="panel">
+    <h2>Setting</h2>
+    <p>close</p>
+    <button id="close-panel-bt">Close</button>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="jquery.panelslider.js"></script>
+  <script>
+    // $('#left-panel-link').panelslider();
+    $('#right-panel-link').panelslider({side: 'right', clickClose: false, duration: 200 });
+
+    $('#close-panel-bt').click(function() {
+      $.panelslider.close();
+    });
+  </script> -->
+
+
+    <div id="controls">
+    
+    <select id="thickness">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+    </select>
+ 
+   
+    <select id="color">
+      <option value="1">Pink</option>
+      <option value="2">Blue</option>
+      <option value="3">Orange</option>
+      <option value="4">Red</option>
+      <option value="5">Yellow</option>
+      <option value="6">Green</option>
+      <option value="7">Violet</option>
+      <option value="8">Brown</option>
+      <option value="9">Black</option>
+      <option value="10">Eraser</option>
+    </select>
+
+  </div>
+
+   </body>
+</html>
