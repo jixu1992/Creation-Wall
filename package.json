@@ -1,0 +1,17 @@
+{
+    "name": "canvas-socketio",
+    "description": "This is a multi-user canvas for the project Adv-Programming.",
+    "author": "Xinyi Yang & Jin XU",
+    "version": "3.0.1",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jixu1992/creationWall"
+    },
+    "dependencies": {
+        "express": "~4.8.4",
+        "socket.io": "~1.0.6"
+    }
+}
