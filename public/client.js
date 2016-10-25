@@ -97,6 +97,9 @@ document.getElementById("color").selectedIndex = 0;
         sizeGlobal = 10;
         console.log("Paint brush size changed to 10");
       } 
+      else if(checkValueThickness == 20) {
+        sizeGlobal = 20;
+      }
 
       if(checkValueColor == 1){       
         colorGlobal = "#FF69B4";//pink
@@ -320,7 +323,7 @@ function createImage(){
 
 function download(){
   var toImage = document.getElementById("drawing");
-  var dataURL = toImage.toDataURL('image/jpeg');
+  var dataURL = toImage.toDataURL('image/png');
   // document.getElementById("save").href = dataURL;
   this.href = dataURL;
 }

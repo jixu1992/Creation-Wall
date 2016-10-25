@@ -8,7 +8,7 @@ body, html{
 }
 
 #controls {
-  background-color: #000000;
+  background-color:transparent;
   position: fixed;
   right:0px;
   top:0px;
@@ -16,7 +16,7 @@ body, html{
   font-weight: bold;
   font-size: smaller;
   padding: 3px;
-  width: 300px;
+  width: 150px;
   height: 25px;
 }
 .bouton17 {
@@ -33,7 +33,8 @@ body, html{
 	  background-color:black;
     color:white;
     text-align:center;
-    padding:5px;
+    padding:30px;
+    font-family: sans-serif;
 }
 
 #searchForm{
@@ -281,10 +282,10 @@ body, html{
 
 #help{
   position: absolute;
-  left: 600px;
+  left: 50px;
   top: 125px;
   font-family: "Open Sans", Arial, Verdana;
-  font-size: 20px;
+  font-size: 15px;
 
 }
 
@@ -322,27 +323,32 @@ body, html{
 
 
 #clear{
+  background-color: #974BE0;
+  color:white;
   position: fixed;
   right: 10px;
   bottom: 40px;
+  border:none;
 }
 
 #saveJpg{
   text-decoration:none;
   position: fixed;
-  right: 12px;
-  bottom: 110px;
+  right: 15px;
+  bottom: 112px;
   font:bold 13px Arial;
-  background:#fafafa;
+  background:#974BE0;
  	/*box-shadow:2px 2px 8px #aaa;*/
  	border-radius:50%;
- 	color:#555;
+ 	color:white;
 }
 
 #save{
+  background-color: #974BE0;
   position: fixed;
   right: 10px;
   bottom: 100px;
+  border:none;
 }
 
 .draggable{ 
