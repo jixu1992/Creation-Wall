@@ -1,4 +1,6 @@
 # creationWall
+Author: Xinyi YANG & Jin XU
+
 This is a multi-user canvas. 
 Multiple uses can draw simutaneously and collaborate to finish a picture. 
 Colors and stroke sizes can be changed. 
