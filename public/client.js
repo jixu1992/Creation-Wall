@@ -92,16 +92,16 @@ document.getElementById("color").selectedIndex = 0;
       else if(checkValueThickness == 5) {
         sizeGlobal = 5;
         console.log("Paint brush size changed to 5");
-      } 
+      }
       else if(checkValueThickness == 10) {
         sizeGlobal = 10;
         console.log("Paint brush size changed to 10");
-      } 
+      }
       else if(checkValueThickness == 20) {
         sizeGlobal = 20;
       }
 
-      if(checkValueColor == 1){       
+      if(checkValueColor == 1){
         colorGlobal = "#FF69B4";//pink
       }
       else if(checkValueColor == 2){
@@ -134,15 +134,15 @@ document.getElementById("color").selectedIndex = 0;
 
       context.strokeStyle = line[2];
       context.lineWidth = line[3];
-        
+
       console.log(checkValueThickness);
       context.beginPath();
-      
+
       context.moveTo(line[0].x , line[0].y );//
       context.lineTo(line[1].x , line[1].y );
-      
+
       context.stroke();
-      
+
    });
 
    // main loop, running every 5ms
@@ -179,7 +179,7 @@ $('#drawing').click(function(e){
 
 });
 
-  
+
 //handle the right click
 function onload(){
   var el = document.getElementById("drawing");
@@ -246,15 +246,15 @@ function redraw(){
 	context.lineJoin = "round";
 	context.lineWidth = 5;
 	for(var i=0; i < clickX.length-1; i++){
-	
+
 		context.moveTo(clickX[i], clickY[i]);//
 		context.lineTo(clickX[i+1], clickY[i+1]);
-		
+
 	}
   context.closePath();
   context.stroke();
   console.log("size: "+ clickX.length);
-	
+
 }
 
 function recognizeStroke(){
@@ -271,7 +271,11 @@ function recognizeStroke(){
   }
   else if(resultStroke.name=="circle"){
     var button1 = document.getElementsByClassName("search-icon");
-    searchToggle(button1, event);//
+    searchToggle(button1, "click");//
+  }
+  else if(resultStroke.name=="pigtail"){
+    var button2 = document.getElementsByClassName("close");
+    searchToggle(button2, "click");//
   }
 }
 
@@ -340,4 +344,3 @@ function clearCanvas(){
    io.connect().emit('clear');
 
 }
-
