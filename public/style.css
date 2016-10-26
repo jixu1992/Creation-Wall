@@ -1,24 +1,25 @@
 * {
-   margin: 0;
-   padding: 0;
+    margin: 0;
+    padding: 0;
 }
 body, html{
-   width: 100%;
-   height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 #controls {
-  background-color:transparent;
-  position: fixed;
-  right:0px;
-  top:0px;
-  font-family: Helvetica, Verdana, sans-serif;
-  font-weight: bold;
-  font-size: smaller;
-  padding: 3px;
-  width: 150px;
-  height: 25px;
+    background-color:transparent;
+    position: fixed;
+    right:0px;
+    top:0px;
+    font-family: Helvetica, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    padding: 3px;
+    width: 150px;
+    height: 25px;
 }
+
 .bouton17 {
  	width:40px;
  	height:40px;
@@ -30,7 +31,7 @@ body, html{
  }
 
 #header {
-	  background-color:black;
+    background-color:black;
     color:white;
     text-align:center;
     padding:30px;
@@ -38,9 +39,9 @@ body, html{
 }
 
 #searchForm{
-  position:absolute;
-  right:250px;
-  top:135px;
+    position:absolute;
+    right:250px;
+    top:135px;
 }
 
 .search-wrapper {
@@ -65,10 +66,10 @@ body, html{
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+
 .search-wrapper.active .input-holder {
     border-radius: 30px;
     width:250px;
-    /*background: rgba(50,50,50,0.6);*/
     background: rgba(0,0,0,0.6);
     -webkit-transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
     -moz-transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
@@ -100,7 +101,6 @@ body, html{
     -webkit-transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
     -moz-transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
     transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
-
     -webkit-transition-delay: 0.3s;
     -moz-transition-delay: 0.3s;
     transition-delay: 0.3s;
@@ -146,8 +146,8 @@ body, html{
     -webkit-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
     -moz-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
     transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
-
 }
+
 .search-wrapper.active .input-holder .search-icon span {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
@@ -234,13 +234,11 @@ body, html{
     color:#B7B7B7;
 }
 
-
 .tooltip {
     position: relative;
     display: inline-block;
     border:1px solid;
     border-radius: 10px;
-    /*border-bottom: 1px dotted black;*/
 }
 
 .tooltip .tooltiptext {
@@ -289,75 +287,70 @@ body, html{
 
 }
 
-
 .contextmenu, .contextmenu ul{
-    	list-style-type: none;
-    	padding: 2px; margin: 0;
-    	background: #fafafa;
-    	border: 2px solid;
-    	cursor: pointer;
-    	width: 150px;
-    	position: absolute;
-    }
-    .contextmenu ul{
-    	display: none;
-    }
-    .contextmenu li:hover > ul {display: block;}
-    .contextmenu li{
-    	border-bottom: 1px #eee solid;
-    	padding: 5px;
-    }
-    .contextmenu li:last-child {
-    	border-bottom: none;
-    }
-    .contextmenu li a {
-    	text-decoration: none;
-    }
-    .contextmenu > a,.contextmenu >span,.contextmenu >p,.contextmenu >div{
-    	margin: 0; padding: 5px; width:140px; display:block;
-    }
-    .contextmenu li:hover,.contextmenu a:hover,.contextmenu span:hover,.contextmenu p:hover{
-    	background: #eee;
-    }
-
-
+	list-style-type: none;
+	padding: 2px; margin: 0;
+	background: #fafafa;
+	border: 2px solid;
+	cursor: pointer;
+	width: 150px;
+	position: absolute;
+}
+.contextmenu ul{
+	display: none;
+}
+.contextmenu li:hover > ul {display: block;}
+.contextmenu li{
+	border-bottom: 1px #eee solid;
+	padding: 5px;
+}
+.contextmenu li:last-child {
+	border-bottom: none;
+}
+.contextmenu li a {
+	text-decoration: none;
+}
+.contextmenu > a,.contextmenu >span,.contextmenu >p,.contextmenu >div{
+	margin: 0; padding: 5px; width:140px; display:block;
+}
+.contextmenu li:hover,.contextmenu a:hover,.contextmenu span:hover,.contextmenu p:hover{
+	background: #eee;
+}
 
 #clear{
-  background-color: #974BE0;
-  color:white;
-  position: fixed;
-  right: 10px;
-  bottom: 40px;
-  border:none;
+    background-color: #974BE0;
+    color:white;
+    position: fixed;
+    right: 10px;
+    bottom: 40px;
+    border:none;
 }
 
 #saveJpg{
-  text-decoration:none;
-  position: fixed;
-  right: 15px;
-  bottom: 112px;
-  font:bold 13px Arial;
-  background:#974BE0;
- 	/*box-shadow:2px 2px 8px #aaa;*/
- 	border-radius:50%;
- 	color:white;
+    text-decoration:none;
+    position: fixed;
+    right: 15px;
+    bottom: 112px;
+    font:bold 13px Arial;
+    background:#974BE0;
+    border-radius:50%;
+    color:white;
 }
 
 #save{
-  background-color: #974BE0;
-  position: fixed;
-  right: 10px;
-  bottom: 100px;
-  border:none;
+    background-color: #974BE0;
+    position: fixed;
+    right: 10px;
+    bottom: 100px;
+    border:none;
 }
 
 .draggable{ 
-  width: 100px;
-  height: 100px;
+    width: 100px;
+    height: 100px;
 }
 
 .resizable{
-  width: 100px;
-  height: 100px;
-
+    width: 100px;
+    height: 100px;
 }

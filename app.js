@@ -3,17 +3,17 @@ var express = require('express'),
     http = require('http'),
     socketIo = require('socket.io');
 
-// start webserver on port 8080
+//web socket server running on port 8080
 var server =  http.createServer(app);
 var io = socketIo.listen(server);
 server.listen(8080);
+
 // add directory with our static files
 app.use(express.static(__dirname + '/public'));
-console.log("Server running on 127.0.0.1:8080");
+console.log("Server running on port 8080");
 
 // array of all lines drawn
 var line_history = [];
-
 
 // event-handler for new incoming connections
 io.on('connection', function (socket) {
@@ -31,8 +31,10 @@ io.on('connection', function (socket) {
       io.emit('draw_line', { line: data.line });
    });
 
+   //add handler for message type "clear".
    socket.on('clear', function () {
         socket.broadcast.emit('clear');
+        //clear the history of lines drawn
         line_history = [];
     });
 });
