@@ -55,6 +55,7 @@ document.getElementById("color").selectedIndex = 0;
    };
 
    socket.on('clear', function(data){
+      $(".draggable").remove();
       context.clearRect(0,0,width, height);
    });
 
@@ -341,6 +342,7 @@ function clearCanvas(){
    var context = canvas.getContext('2d');
    context.clearRect(0,0,width, height);
    //line_history=[];
+   $(".draggable").remove();
    io.connect().emit('clear');
 
 }
