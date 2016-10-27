@@ -10,6 +10,7 @@ var drawPosIndex= 1 ;
 
 var addX;
 var addY;
+var inputImageUrl;
 
 //event is fired when the document has been completely loaded and parsed
 document.addEventListener("DOMContentLoaded", function(ev) {
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(ev) {
   canvas.height = height;
 
   // register mouse event handlers
-  canvas.onmousedown = function(e){ 
+  canvas.onmousedown = function(e){
     if(e.which!=3){mouse.click = true;} //avoid drawing when right clicked
   };
   canvas.onmouseup = function(e){ mouse.click = false; };
@@ -63,6 +64,34 @@ document.addEventListener("DOMContentLoaded", function(ev) {
   socket.on('clear', function(data){
     $(".draggable").remove();
     context.clearRect(0,0,width, height);
+  });
+
+  socket.on('add_image', function (data) {
+     var toImage= data.image;
+     var tobase_image = new Image();
+
+       tobase_image.src = toImage[0];
+
+       tobase_image.onload = function(){
+         var tempDiv= document.createElement("div");
+
+         tempDiv.setAttribute("class","resizable draggable");
+         //image size
+         tobase_image.style.width="300px";
+         tobase_image.style.height="auto";
+
+         $(tempDiv).prepend(tobase_image);
+
+         document.body.appendChild(tempDiv);
+         $( function() {
+           $(".draggable").draggable();
+          //  $(".resizable").resizable();
+         } );
+         tempDiv.style="position:absolute; z-index:2";
+         tempDiv.style.left=toImage[1]+"px";
+         tempDiv.style.top =toImage[2]+"px";
+       }
+
   });
 
    // draw line received from server
@@ -157,6 +186,18 @@ document.addEventListener("DOMContentLoaded", function(ev) {
     setTimeout(mainLoop, 5);
   }
   mainLoop();
+
+  function secondLoop() {
+  // check if the user is drawing
+    if (inputImageUrl) {
+       // send line to to the server
+       socket.emit('add_image', { image: [inputImageUrl, addX, addY] });
+       inputImageUrl="";//
+    }
+
+    setTimeout(secondLoop, 5);
+  }
+  secondLoop();
 });
 
 
@@ -294,7 +335,7 @@ function createImage(){
   var name = prompt("Enter Url", "");
   if(name){
     base_image.src=name;
-
+    inputImageUrl=name;
     base_image.onload = function(){
       var tempDiv= document.createElement("div");
       var urlString = 'url(' + name + ')';
@@ -305,7 +346,7 @@ function createImage(){
 
       $(tempDiv).prepend(base_image);
 
-      document.body.appendChild(tempDiv);
+      // document.body.appendChild(tempDiv);//don't add in own page again
       $( function() {
         $(".draggable").draggable();
         $(".resizable").resizable();

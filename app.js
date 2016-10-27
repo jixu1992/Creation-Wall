@@ -1,4 +1,4 @@
-var express = require('express'), 
+var express = require('express'),
     app = express(),
     http = require('http'),
     socketIo = require('socket.io');
@@ -14,6 +14,8 @@ console.log("Server running on port 8080");
 
 // array of all lines drawn
 var line_history = [];
+// array of all images
+var image_history= [];
 
 // event-handler for new incoming connections
 io.on('connection', function (socket) {
@@ -22,13 +24,23 @@ io.on('connection', function (socket) {
    for (var i in line_history) {
       socket.emit('draw_line', { line: line_history[i] } );
    }
+   for (var j in image_history) {
+      socket.emit('add_image', { image: image_history[j] } );//iamge consist of url, x, y
+   }
+
 
    // add handler for message type "draw_line".
    socket.on('draw_line', function (data) {
-      // add received line to history 
+      // add received line to history
       line_history.push(data.line);
       // send line to all clients
       io.emit('draw_line', { line: data.line });
+   });
+   socket.on('add_image', function (data) {
+      // add received line to history
+      image_history.push(data.image);
+      // send line to all clients
+      io.emit('add_image', { image: data.image });
    });
 
    //add handler for message type "clear".
@@ -36,5 +48,6 @@ io.on('connection', function (socket) {
         socket.broadcast.emit('clear');
         //clear the history of lines drawn
         line_history = [];
+        image_history= [];
     });
 });
