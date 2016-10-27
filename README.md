@@ -24,5 +24,5 @@ To run the project:
 
 There are some parts that we can ameliorate:
   - Add a specific area to draw gestures to avoid conflicts.
-  - Synchronize the inserted image to other users.
+  - Synchronize the movement of images with other users. (Now the images can be sychronized, but a user can only move it on his own canvas.)
   - Right click on the canvas to add text.
