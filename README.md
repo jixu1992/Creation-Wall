@@ -1,4 +1,4 @@
-# creationWall
+# Creation-Wall
 Author: Xinyi YANG & Jin XU
 
 This is a multi-user canvas.
